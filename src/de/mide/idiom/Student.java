@@ -21,7 +21,7 @@ public class Student {
 	 * (but not a design pattern): It is a "programming pattern" that 
 	 * can be used in many cases and is considered as good practice,  
 	 * but is only applicable for Java).
-	 */
+	 */	
 	@Override
 	public boolean equals( Object object ) {
 		
