@@ -4,6 +4,10 @@ import de.mide.patterns.factory.pizzas.AbstractPizza;
 import de.mide.patterns.factory.pizzas.HawaiianPizzaGermany;
 import de.mide.patterns.factory.pizzas.PepperoniPizzaGermany;
 
+
+/**
+ * This class could also be named "Germany Pizzeria".
+ */
 public class PizzaFactoryGermany extends AbstractPizzaFactory {
 	
 	@Override

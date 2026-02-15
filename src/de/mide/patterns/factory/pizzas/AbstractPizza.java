@@ -51,7 +51,9 @@ public abstract class AbstractPizza {
 	 * Returns a string with a summary of the calling object,
 	 * e.g., name of pizza and toppings.
 	 * 
-	 * @return Description of pizza
+	 * @return Description of pizza; example output:
+	 *         Hawaiian Pizza (Germany), diameter=30 cm;  toppings: 
+	 *         [Pineapple, Corn, Ham, Gouda cheese, Tomato sauce]
 	 */
 	@Override
 	public String toString() {
