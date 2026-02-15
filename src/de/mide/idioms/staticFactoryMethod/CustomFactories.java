@@ -17,6 +17,7 @@ public class CustomFactories {
 		return new HashMap<String,String>( 100, 0.75f );
 	}
 
+	
 	/**
 	 * Small test: Using the HashMap returned by the static
 	 * factory method for a little glossary.
