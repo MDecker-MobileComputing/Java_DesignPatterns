@@ -29,6 +29,6 @@ public class CustomFactories {
 		map.put( "RAM", "Random Access Memory"    );
 		map.put( "CPU", "Central Processing Unit" );
 		
-		System.out.println( map.get( "RAM" ) ); // output: Random Access Memory 
+		System.out.println( "RAM: " + map.get( "RAM" ) ); // output: Random Access Memory 
 	}
 }
