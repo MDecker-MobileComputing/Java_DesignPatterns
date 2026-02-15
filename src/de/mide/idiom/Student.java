@@ -1,9 +1,16 @@
 package de.mide.idiom;
 
+
+/**
+ * One object of this class represents a student at a university.
+ * The equals method is an example for an "idiom".
+ */
 public class Student {
 
+	/** First and last name of student */
 	private String _name;
 	
+	/** Matriculation number */
 	private int _enrollmentNumber;
 	
 	public Student( String name, int enrollmentNumber ) {
@@ -12,10 +19,13 @@ public class Student {
 		_enrollmentNumber = enrollmentNumber;
 	}
 	
+
 	public String getName() { return _name; }
 	
+
 	public int getEnrollmentNumber() { return _enrollmentNumber; }
 	
+
 	/**
 	 * The way this method is implemented can be considered as IDIOM
 	 * (but not a design pattern): It is a "programming pattern" that 
@@ -39,5 +49,4 @@ public class Student {
 			return false;
 		}		
 	}
-	
 }
