@@ -5,10 +5,11 @@ package de.mide.patterns.command.runnabledemo;
  * Very basic example for usage of interface {@code java.lang.Runtime}, 
  * which is Java's interface for the design pattern "Command".   
  */
-public class DemoRunnable {
+public class RunnableDemo1 {
 	 	
 	/**
-	 * Main method
+	 * Main method: Defines simple command that is executed after 
+	 * a few seconds.
 	 * 
 	 * @param args Is not evaluated
 	 * 
