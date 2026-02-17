@@ -1,12 +1,24 @@
 package de.mide.patterns.command.runnabledemo;
 
+
+/**
+ * Very basic example for usage of interface {@code java.lang.Runtime}, 
+ * which is Java's interface for the design pattern "Command".   
+ */
 public class DemoRunnable {
 	 	
+	/**
+	 * Main method
+	 * 
+	 * @param args Is not evaluated
+	 * 
+	 * @throws InterruptedException Might be thrown by {@code Thread.sleep()}
+	 */
 	public static void main( String[] args ) throws InterruptedException {
 		
 		System.out.println();
 		
-		// define the command
+		// define the command by implement interface Runnable
 		final Runnable runnable = new Runnable() {
 			
 			@Override
@@ -18,7 +30,7 @@ public class DemoRunnable {
 	
 		
 		final int numberOfSeconds = 2;
-		System.out.println( "Waiting for " + numberOfSeconds + " seconds ...");
+		System.out.println( "Waiting for " + numberOfSeconds + " seconds ..." );
 		Thread.sleep( numberOfSeconds * 1_000 );
 		
 		runnable.run();
