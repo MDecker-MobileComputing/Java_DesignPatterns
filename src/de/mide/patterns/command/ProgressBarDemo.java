@@ -1,7 +1,5 @@
 package de.mide.patterns.command;
 
-import static javax.swing.WindowConstants.EXIT_ON_CLOSE;
-
 import java.awt.Container;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
@@ -11,6 +9,7 @@ import javax.swing.JButton;
 import javax.swing.JFrame;
 import javax.swing.JProgressBar;
 import javax.swing.SwingUtilities;
+
 
 @SuppressWarnings("serial")
 public class ProgressBarDemo extends JFrame implements ActionListener {
