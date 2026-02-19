@@ -60,19 +60,19 @@ public class StudentRegistration extends Thread {
 	
 		try {
 			
-			registerNewStudent( 123, "Alice Ackerman" );
+			registerNewStudent( 123123, "Alice Ackerman" );
 			
 			Thread.sleep( 800 );
 			
-			registerNewStudent( 234, "Bob Bayer" );
+			registerNewStudent( 234234, "Bob Bayer" );
 			
 			Thread.sleep( 500 );
 			
-			registerNewStudent( 345, "Claire Cramer" );
+			registerNewStudent( 345345, "Claire Cramer" );
 			
 			Thread.sleep( 800 );
 			
-			registerNewStudent( 456, "Daniel Davenport" );
+			registerNewStudent( 456456, "Daniel Davenport" );
 		}
 		catch ( InterruptedException ex ) {}		
 	}
