@@ -1,5 +1,6 @@
 package de.mide.patterns.observer;
 
+import static java.awt.Font.PLAIN;
 import static java.awt.event.ItemEvent.SELECTED;
 import static javax.swing.SwingConstants.CENTER;
 
@@ -15,17 +16,24 @@ import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JPanel;
 
-class FontAndName {
+
+/**
+ * Objects of this class are to be used as entries
+ * in the ComboBox. Each object contains a font
+ * (only the font size is different) and the
+ * name of the font size for displaying. 
+ */
+class FontSizeAndName {
 	
 	private Font _font = null;
 	
 	private String _name = null;
 	
-	public FontAndName( String name, int fontSize ) {
+	public FontSizeAndName( String name, int fontSize ) {
 
 		_name = name;
 		
-		_font = new Font( "Arial", Font.PLAIN, fontSize );
+		_font = new Font( "Arial", PLAIN, fontSize );
 	}
 	
 	public Font getFont() { return _font; }
@@ -35,14 +43,20 @@ class FontAndName {
 }
 
 
+/**
+ * The program shows a UI, in which a font size can be selected from a
+ * ComboBox. The selected font size is applied to the text shown below
+ * the ComboBox.
+ */
 @SuppressWarnings("serial")
 public class ComboBoxDemo extends JFrame {
 
+	/** Label with text for which the font size can be selected. */
 	private JLabel _label = null;
 	
-	private JComboBox<FontAndName> _comboBox = null;
-	
-	
+	/** ComboBox with different font sizes. */
+	private JComboBox<FontSizeAndName> _comboBox = null;
+		
 	
 	/**
 	 * Constructor, set ups the UI.
@@ -51,11 +65,12 @@ public class ComboBoxDemo extends JFrame {
 		
 		final Container container = getContentPane();
 		
-		final FontAndName[] optionsArray = { 
-				new FontAndName( "Small" , 10 ),
-				new FontAndName( "Medium", 15 ),
-				new FontAndName( "Large" , 25 ),
-				new FontAndName( "Huge"  , 35 )
+		final FontSizeAndName[] optionsArray = {
+				new FontSizeAndName( "Tiny"  , 10 ),
+				new FontSizeAndName( "Small" , 15 ),
+				new FontSizeAndName( "Medium", 20 ),
+				new FontSizeAndName( "Large" , 25 ),
+				new FontSizeAndName( "Huge"  , 30 )
 		};
 		_comboBox = new JComboBox<>( optionsArray );
 		
@@ -76,6 +91,10 @@ public class ComboBoxDemo extends JFrame {
 	}
 	
 
+	/**
+	 * Inner Class for event handler = observer for
+	 * state changes of ComboBox.
+	 */
 	private class ComboBoxObserver implements ItemListener {
 		
 		@Override
@@ -83,7 +102,7 @@ public class ComboBoxDemo extends JFrame {
 			
 			if ( event.getStateChange() == SELECTED ) {
 			
-				FontAndName newFontAndName = (FontAndName) event.getItem();
+				FontSizeAndName newFontAndName = (FontSizeAndName) event.getItem();
 				
 				Font newFont = newFontAndName.getFont();
 				_label.setFont( newFont );
