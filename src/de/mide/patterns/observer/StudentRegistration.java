@@ -43,7 +43,8 @@ public class StudentRegistration extends Thread {
 	 */
 	private void registerNewStudent( int enrollmentNumber, String name ) {
 	
-		System.out.println( "\nNew student registered: " + name + " (" + enrollmentNumber + ")" );
+		System.out.println( 
+				"\nNew student registered: " + name + " (" + enrollmentNumber + ")" );
 		
 		for ( IStudentObserver observer : _studentObserverList ) {
 			
