@@ -1,5 +1,6 @@
 package de.mide.patterns.observer;
 
+
 public class CanteenSystem implements IStudentObserver {
 	
 	@Override

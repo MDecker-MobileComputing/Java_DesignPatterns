@@ -1,5 +1,6 @@
 package de.mide.patterns.observer;
 
+
 public class LibrarySystem implements IStudentObserver {
 
 	@Override
@@ -7,5 +8,4 @@ public class LibrarySystem implements IStudentObserver {
 		
 		System.out.println( "Library informed about new student: " + name );
 	}
-
 }
