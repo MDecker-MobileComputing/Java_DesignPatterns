@@ -1,4 +1,4 @@
-package de.mide.patterns.observer;
+package de.mide.patterns.observer.university;
 
 
 public class CanteenSystem implements IStudentObserver {
