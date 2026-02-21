@@ -28,18 +28,19 @@ class FontSizeAndName {
 	
 	private Font _font = null;
 	
-	private String _name = null;
+	private String _displayName = null;
+	
 	
 	/**
 	 * Constructor to create new named font size.
 	 * 
-	 * @param name Displaying name of font size in ComboBox
+	 * @param displayName Displaying name of font size in ComboBox
 	 * 
 	 * @param fontSize Font size
 	 */
-	public FontSizeAndName( String name, int fontSize ) {
+	public FontSizeAndName( String displayName, int fontSize ) {
 
-		_name = name;
+		_displayName = displayName;
 		
 		_font = new Font( "Arial", PLAIN, fontSize );
 	}
@@ -53,7 +54,7 @@ class FontSizeAndName {
 	 * String returned by this method is used as ComboBox entry.
 	 */ 
 	@Override
-	public String toString() { return _name; }
+	public String toString() { return _displayName; }
 }
 
 
