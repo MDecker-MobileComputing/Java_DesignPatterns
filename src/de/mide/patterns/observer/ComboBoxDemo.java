@@ -81,8 +81,6 @@ public class ComboBoxDemo extends JFrame {
 	 */
 	public ComboBoxDemo() {
 		
-		final Container container = getContentPane();
-		
 		final FontSizeAndName[] optionsArray = {
 				new FontSizeAndName( "Tiny"  , 10 ),
 				new FontSizeAndName( "Small" , 15 ),
@@ -97,6 +95,8 @@ public class ComboBoxDemo extends JFrame {
 		JPanel fontSizePanel = new JPanel();
 		fontSizePanel.add( new JLabel( "Font Size: " ) );
 		fontSizePanel.add( _comboBox );
+		
+		final Container container = getContentPane();
 		
 		container.setLayout( new GridLayout( 0, 1 ) );
 		container.add( fontSizePanel );
