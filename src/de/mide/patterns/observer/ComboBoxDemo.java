@@ -90,12 +90,12 @@ public class ComboBoxDemo extends JFrame {
 		};
 		_comboBox = new JComboBox<>( optionsArray );
 		
-		_label = new JLabel( "Lorem Ipsum", CENTER );
-		
 		JPanel fontSizePanel = new JPanel();
 		fontSizePanel.add( new JLabel( "Font Size: " ) );
 		fontSizePanel.add( _comboBox );
 		
+		_label = new JLabel( "Lorem Ipsum", CENTER );
+				
 		final Container container = getContentPane();
 		
 		container.setLayout( new GridLayout( 0, 1 ) );
