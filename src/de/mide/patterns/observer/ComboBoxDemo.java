@@ -68,13 +68,13 @@ class FontSizeAndName {
  */
 @SuppressWarnings("serial")
 public class ComboBoxDemo extends JFrame {
+	
+	/** ComboBox with different font sizes; the subject for the observer pattern. */
+	private JComboBox<FontSizeAndName> _comboBox = null;
 
 	/** Label with text for which the font size can be selected. */
 	private JLabel _label = null;
 	
-	/** ComboBox with different font sizes; the subject for the observer pattern. */
-	private JComboBox<FontSizeAndName> _comboBox = null;
-		
 	
 	/**
 	 * Constructor, set ups the UI.
