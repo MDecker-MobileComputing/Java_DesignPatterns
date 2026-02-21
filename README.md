@@ -2,7 +2,8 @@
 
 <br>
 
-This repository contains an Eclipse project with some design patterns in Java.
+This repository contains an Eclipse project with sample code (Java) for some 
+design patterns.
 
 <br>
 
