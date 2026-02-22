@@ -3,14 +3,15 @@ package de.mide.patterns.command.composite;
 import java.util.ArrayList;
 import java.util.Iterator;
 
+
 /**
- * The composition itself does have no weight, i.e., it is
- * not a physical objects, but only a logical objects
- * that contains several components.
+ * Composite component.
  */
 public class Compositum extends AbstractComponent {
 
+	/** List of all components. */
 	private ArrayList<AbstractComponent> _componentList = new ArrayList<>( 5 );
+	
 	
 	/**
 	 * Create new composition consisting of pieces.
@@ -21,8 +22,13 @@ public class Compositum extends AbstractComponent {
 		
 		super( name );
 	}
+	
 
-		
+	/**
+	 * Add component to compositum.
+	 * 
+	 * @param newComponent Component to be added
+	 */
 	public void addComponent( AbstractComponent newComponent ) {
 						
 		_componentList.add( newComponent );
@@ -34,6 +40,7 @@ public class Compositum extends AbstractComponent {
 	 * 
 	 * @return Weight of all parts of the compositum in grams
 	 */
+	@Override
 	public int getWeight() {
 		
 		int weightSum = 0;
@@ -48,7 +55,9 @@ public class Compositum extends AbstractComponent {
 		return weightSum;
 	}
 	
-	
+	/**
+	 * 
+	 */
 	@Override
 	public String toString() {
 		

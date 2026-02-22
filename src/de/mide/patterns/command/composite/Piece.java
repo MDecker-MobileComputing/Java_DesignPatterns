@@ -5,7 +5,7 @@ package de.mide.patterns.command.composite;
  */
 public class Piece extends AbstractComponent {
 
-	/** Weight of the piece grams. */
+	/** Weight of the piece grams, must be greater than 0. */
 	private int _weight = 0;
 	
 	
