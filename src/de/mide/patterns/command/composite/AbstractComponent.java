@@ -6,15 +6,23 @@ public abstract class AbstractComponent {
 	/** Name of composite or piece. */
 	private String _name;
 	
+	/** Weight of indivisible or composite component. */
+	protected int _weightInGrams = 0;
+	
 	
 	/**
-	 * Constructor for creation of new component.
+	 * Constructor for creation of new component, must be
+	 * called by constructors of non-abstract sub-classes.
 	 * 
 	 * @param name Name of component, e.g., "electric engine"
+	 * 
+	 * @param weightInGrams Weight of composite component or
+	 *                      piece
 	 */
-	public AbstractComponent( String name ) {
+	public AbstractComponent( String name, int weightInGrams ) {
 		
-		_name = name;
+		_name          = name;
+		_weightInGrams = weightInGrams;
 	}
 	
 	
@@ -35,5 +43,21 @@ public abstract class AbstractComponent {
 	 * 
 	 * @return Weight in grams
 	 */
-	public abstract int getWeight();		
+	public int getWeight() {
+		
+		return _weightInGrams;
+	}
+	
+	
+	/**
+	 * Method returns string representation of calling object.
+	 * 
+	 * @return String with name and weight of calling object
+	 */
+	@Override
+	public String toString() {
+		
+		return String.format( "Total weight of \"%s\": %d grams", 
+							   getName(), getWeight() );
+	}
 }
