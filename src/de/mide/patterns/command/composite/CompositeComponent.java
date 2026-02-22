@@ -2,6 +2,7 @@ package de.mide.patterns.command.composite;
 
 import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 
 /**
@@ -9,8 +10,11 @@ import java.util.Iterator;
  */
 public class CompositeComponent extends AbstractComponent {
 
-	/** List of all components (either indivisible components or composite components. */
-	private ArrayList<AbstractComponent> _componentList = new ArrayList<>( 5 );
+	/** 
+	 * List of all components (either indivisible components or composite components. 
+	 * The list will be enlarged automatically if needed.
+	 */
+	private List<AbstractComponent> _componentList = new ArrayList<>( 5 );
 	
 	
 	/**
@@ -54,6 +58,30 @@ public class CompositeComponent extends AbstractComponent {
 	
 	
 	/**
+	 * Getter for number of components belonging to the calling
+	 * composite component. 
+	 * 
+	 * @return Number of components
+	 */
+	public int getNumOfComponents() {
+		
+		return _componentList.size();
+	}
+	
+	
+	/**
+	 * Getter for list of components belonging to the calling
+	 * composite component.
+	 *  
+	 * @return List of components
+	 */
+	public List<AbstractComponent> getComponents() {
+		
+		return _componentList;
+	}
+	
+	
+	/**
 	 * Calculate total weight.
 	 * 
 	 * @return Sum of the composite component's weight and
@@ -69,7 +97,8 @@ public class CompositeComponent extends AbstractComponent {
 		
 		while( iterator.hasNext() ) {
 			
-			weightSum += iterator.next().getWeight();
+			AbstractComponent comp = iterator.next();
+			weightSum += comp.getWeight();
 		}
 		
 		return weightSum;

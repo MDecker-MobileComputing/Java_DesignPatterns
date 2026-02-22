@@ -1,7 +1,15 @@
 package de.mide.patterns.command.composite;
 
+/**
+ * Class with test for example for design pattern "composite".
+ */
 public class Main {
 
+	/**
+	 * Entrance method
+	 * 
+	 * @param args Not evaluated
+	 */
 	public static void main( String[] args ) {
 		
 		System.out.println();
@@ -9,7 +17,7 @@ public class Main {
 		AbstractComponent coverFront = new IndivisibleComponent( "Front Cover", 20 );
 		AbstractComponent coverBack  = new IndivisibleComponent( "Back Cover" , 40 );
 		
-		CompositeComponent housing  = new CompositeComponent( "Housing", 0 );
+		CompositeComponent housing  = new CompositeComponent( "Housing", 5 ); // 5g for frame
 		housing.addComponent( coverFront );
 		housing.addComponent( coverBack );
 		System.out.println( housing.toString() );
@@ -18,7 +26,7 @@ public class Main {
 		AbstractComponent battery = new IndivisibleComponent( "Battery"             , 60 );
 		AbstractComponent soc     = new IndivisibleComponent( "System on Chip (SoC)", 40 );
 		
-		CompositeComponent electronics = new CompositeComponent( "Electronic parts", 5 ); // 5g for cables & connectors
+		CompositeComponent electronics = new CompositeComponent( "Electronic parts", 0 ); 
 		electronics.addComponent( display );
 		electronics.addComponent( battery );
 		electronics.addComponent( soc     );
@@ -28,6 +36,6 @@ public class Main {
 		smartphone.addComponent( housing     );
 		smartphone.addComponent( electronics );
 		
-		System.out.println( smartphone.toString() );
+		System.out.println( "\n" + smartphone.toString() );
 	}
 }
