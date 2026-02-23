@@ -16,6 +16,7 @@ public class ProgressBarDemo extends JFrame implements ActionListener {
 	
 	private static final int MAX_PROGRESS_VALUE = 20;
 	
+	/** Button to start the thread to increase the value of the progress bar. */
 	private final JButton _startButton = new JButton( "Start" );
 	
 	private final JProgressBar _progressBar = new JProgressBar( 0, MAX_PROGRESS_VALUE );
@@ -96,7 +97,7 @@ public class ProgressBarDemo extends JFrame implements ActionListener {
 		
 		ProgressBarDemo progressBarDemo = new ProgressBarDemo();
 		progressBarDemo.setSize( 500, 150 );
-		progressBarDemo.setTitle( "ProgressBarDemo" );
+		progressBarDemo.setTitle( "ProgressBar Demo" );
 		progressBarDemo.setVisible( true );
 		progressBarDemo.setLocation( 300, 300 );
 		progressBarDemo.setDefaultCloseOperation( EXIT_ON_CLOSE );
