@@ -1,4 +1,4 @@
-package de.mide.patterns.command.composite;
+package de.mide.patterns.composite;
 
 
 public abstract class AbstractComponent {

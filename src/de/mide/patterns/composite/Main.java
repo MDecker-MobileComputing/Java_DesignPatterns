@@ -1,4 +1,5 @@
-package de.mide.patterns.command.composite;
+package de.mide.patterns.composite;
+
 
 /**
  * Class with test for example for design pattern "composite".
@@ -6,7 +7,7 @@ package de.mide.patterns.command.composite;
 public class Main {
 
 	/**
-	 * Entrance method
+	 * Entrance method.
 	 * 
 	 * @param args Not evaluated
 	 */
@@ -17,7 +18,7 @@ public class Main {
 		AbstractComponent coverFront = new IndivisibleComponent( "Front Cover", 20 );
 		AbstractComponent coverBack  = new IndivisibleComponent( "Back Cover" , 40 );
 		
-		CompositeComponent housing  = new CompositeComponent( "Housing", 5 ); // 5g for frame
+		CompositeComponent housing  = new CompositeComponent( "Housing", 5 ); // 5g for frame or glue
 		housing.addComponent( coverFront );
 		housing.addComponent( coverBack );
 		System.out.println( housing.toString() );
