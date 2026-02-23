@@ -1,6 +1,9 @@
-package de.mide.patterns.composite;
+package de.mide.patterns.composite.calcweight;
 
 
+/**
+ * Abstract super-class for the objects in the hierarchy tree.
+ */
 public abstract class AbstractComponent {
 
 	/** Name of composite or piece. */

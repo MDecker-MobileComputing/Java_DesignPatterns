@@ -1,4 +1,4 @@
-package de.mide.patterns.composite;
+package de.mide.patterns.composite.calcweight;
 
 import java.util.ArrayList;
 import java.util.Iterator;
