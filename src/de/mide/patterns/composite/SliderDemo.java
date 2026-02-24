@@ -38,9 +38,8 @@ public class SliderDemo extends JFrame implements ChangeListener {
 		_fontSizeLabel   = new JLabel( "Font Size: " );
 		_loremIpsumLabel = new JLabel( "Lorem Ipsum", CENTER ); 
 		
-		_slider = new JSlider( 5, 35, 15 );
-		_slider.addChangeListener( this );
-		
+		_slider = new JSlider( 5, 35, 15 ); // min, max, value
+				
 		JPanel fontSizePanel = new JPanel();
 		fontSizePanel.add( _fontSizeLabel );
 		fontSizePanel.add( _slider );
@@ -53,6 +52,7 @@ public class SliderDemo extends JFrame implements ChangeListener {
 		Container container = getContentPane();
 		container.add( wholePanel, BorderLayout.CENTER );
 		
+		_slider.addChangeListener( this );
 		stateChanged( null );
 	}
 	
