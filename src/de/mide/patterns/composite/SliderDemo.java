@@ -20,9 +20,13 @@ import javax.swing.event.ChangeListener;
 @SuppressWarnings("serial")
 public class SliderDemo extends JFrame implements ChangeListener {
 
-	private JLabel _fontSizeLabel   = null;	
+	/** Label with caption for Slider. */
+	private JLabel _fontSizeLabel   = null;
+	
+	/** Label with sample text whose font size is changed. */
 	private JLabel _loremIpsumLabel = null;
 	
+	/** Slider to choose font size. */
 	private JSlider _slider = null;
 	
 	
