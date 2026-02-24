@@ -44,7 +44,6 @@ public class SliderDemo extends JFrame implements ChangeListener {
 		JPanel fontSizePanel = new JPanel();
 		fontSizePanel.add( _fontSizeLabel );
 		fontSizePanel.add( _slider );
-
 		
 		JPanel wholePanel = new JPanel();					
 		wholePanel.setLayout( new GridLayout( 0, 1 ) );
@@ -60,6 +59,8 @@ public class SliderDemo extends JFrame implements ChangeListener {
 
 	/**
 	 * Implementation of the only method from {@code ChangeListener}.
+	 * This method is called when the slide value was changed.
+	 * The new value is used as font size for the label.
 	 */
 	@Override
 	public void stateChanged( ChangeEvent event ) {
