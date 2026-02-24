@@ -26,8 +26,10 @@ import javax.swing.JPanel;
  */
 class FontSizeAndName {
 	
+	/** Arial font with particular size. */
 	private Font _font = null;
 	
+	/** Name of font size to be shown in ComboBox. */
 	private String _displayName = null;
 	
 	
@@ -139,7 +141,7 @@ public class ComboBoxDemo extends JFrame {
 		
 		ComboBoxDemo comboBoxDemo = new ComboBoxDemo();
 		comboBoxDemo.setSize( 500, 250 );
-		comboBoxDemo.setTitle( "ComboBoxDemo" );
+		comboBoxDemo.setTitle( "ComboBox Demo" );
 		comboBoxDemo.setVisible( true );
 		comboBoxDemo.setLocation( 300, 300 );
 		comboBoxDemo.setDefaultCloseOperation( EXIT_ON_CLOSE );
