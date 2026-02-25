@@ -4,7 +4,10 @@ import java.util.Optional;
 
 /**
  * Class with template method for calculation of final grade
- * based on an array of point values.
+ * based on an array of point values. The abstract methods
+ * in this class are also called "Hook Methods", because
+ * by overwriting these methods sub-classes can define
+ * or attach their custom code. 
  */
 public abstract class AbstractGradeCalculation {
 	
@@ -22,21 +25,29 @@ public abstract class AbstractGradeCalculation {
 	 * 
 	 * @return Final grade for {@code pointsArray}
 	 * 
-	 * @throws GradeException Inconsistency in {@code pointsArray} found.
+	 * @throws GradeException Inconsistency in {@code pointsArray} 
+	 *                        found.
 	 */
-	public final String pointsToGrade( double[] pointsArrayInput ) throws GradeException  {
+	public final String pointsToGrade( double[] pointsArrayInput ) 
+												throws GradeException  {		
+		// Step 1
+		final Optional<String> checkResultOptional = 
+								    checkInput( pointsArrayInput );
 		
-		final Optional<String> checkResultOptional = checkInput( pointsArrayInput );
 		if ( checkResultOptional.isPresent() ) {
 			
 			final String errorMessage = checkResultOptional.get();
-			throw new GradeException( "Invalid input data: " + errorMessage );
+			throw new GradeException( 
+							"Invalid input data: " + errorMessage );
 		}
 		
+		// Step 2
 		double[] pointsArrayPreprocessed = preprocessPoints( pointsArrayInput );
 		
+		// Step 3
 		double pointsAverage = calculateAverage( pointsArrayPreprocessed );
-		
+				
+		// Step 4
 		String finalGrade = averagePoints2FinalGrade( pointsAverage );
 		
 		return finalGrade;

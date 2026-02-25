@@ -30,11 +30,11 @@ public class Main {
 		
 		perform( new double[]{ 90.0, 0.0 } );
 		
-		perform( new double[]{ 60.0 } ); // invalid input: only one value
+		perform( new double[]{ 60.0 } );        // invalid input: only one value
 		
 		perform( new double[]{ 10.0, 110.0 } ); // invalid input: 2nd value too big
 		
-		perform( new double[]{ -5.0, 90.0 } ); // invalid input: 1st value too small		
+		perform( new double[]{ -5.0, 90.0 } );  // invalid input: 1st value too small		
 		
 		
 		System.out.println( "\n\n## Standard Exam ##\n" );
@@ -57,7 +57,7 @@ public class Main {
 	
 	
 	/**
-	 * Perform single grade calcuation for a mock exam 
+	 * Performs a single grade calcuation and writes result to STDOUT. 
 	 * 
 	 * @param pointsArray array of points
 	 */
