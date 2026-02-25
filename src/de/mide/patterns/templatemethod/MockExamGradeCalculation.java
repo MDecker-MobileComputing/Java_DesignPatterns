@@ -1,16 +1,21 @@
 package de.mide.patterns.templatemethod;
 
+import static java.lang.Math.ceil;
+import static java.lang.Math.floor;
 import static java.util.Optional.empty;
 
 import java.util.Optional;
 
 
 /**
- * Class is subclass of abstract class with template method.  
+ * Grade calculation for "Mock Exams" (in German: Scheinklausur):
+ * The grade does not count towards the final certificate; it is only 
+ * a matter of passing (with at least 50% of points) or failing.   
  * <br><br>
  * 
  * Generous calculation: If individual values and average 
- * values are not whole points, they are rounded up.
+ * values are not whole points, they are rounded up to the
+ * next full number.
  */
 public class MockExamGradeCalculation extends AbstractGradeCalculation {
 
@@ -32,7 +37,8 @@ public class MockExamGradeCalculation extends AbstractGradeCalculation {
 		if ( numberOfValues < 2 ) {
 			
 			return Optional.of( 
-					"Number of point values is less than 2: " + numberOfValues );
+					"Number of point values is less than 2: " + 
+			        numberOfValues );
 		}
 		
 		for ( int i = 0; i < pointsArray.length; i++ ) {
@@ -41,8 +47,10 @@ public class MockExamGradeCalculation extends AbstractGradeCalculation {
 			
 			if ( value < 0.0 || value > 100.0 ) {
 				
-				final String errorMessage = 
-						String.format( "Point value %d outside of range [0, 100]: %f", i, value ); 
+				final String errorMessage = String.format(  
+						"Point value %d outside of range [0.0, 100.0]: %.2f", 
+						i+1, value ); 								 
+				
 				return Optional.of( errorMessage ); 						    						 
 			}
 		}
@@ -52,25 +60,36 @@ public class MockExamGradeCalculation extends AbstractGradeCalculation {
 
 	
 	/**
+	 * Helper method:
 	 * Round up {@code value} to the next full value
 	 * if not already a full value.
+	 * <br><br>
+	 * 
 	 * Example: {@code 10.1} will become {@code 11.0},
 	 * but {@code 12.0} will stay {@code 12.0}. 
 	 * 
-	 * @param value Value that might have to be 
-	 *              rounded up
+	 * @param value Value that might have to be rounded
+	 *              up
 	 * 
 	 * @return Same as input value or rounded up.
 	 */
 	private double roundUp( double value ) {
 		
-        if ( value == Math.floor( value ) ) {
+		// Instead of the simple comparison value==floor(value)
+		// we check if the delta value is below a small value  
+		// ("epsilon"), so the comparison also works for small  
+		// rouding errors which can occur in floating point 
+		// operations   
+		
+		final double delta = Math.abs( value - floor( value ) );
+		
+        if ( delta < 0.0001 ) {
         	
         	return value;
         		        	
         } else {
         	
-        	return Math.ceil( value );
+        	return ceil( value );
         }
 	}
 	
