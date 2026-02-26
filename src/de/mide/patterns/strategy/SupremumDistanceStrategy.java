@@ -6,6 +6,7 @@ package de.mide.patterns.strategy;
  */
 public class SupremumDistanceStrategy implements IDistanceStrategy {
 
+	@Override
 	public double calculateDistance( Point point1, Point point2 ) {
 		
 		double deltaX = point2.x() - point1.x();

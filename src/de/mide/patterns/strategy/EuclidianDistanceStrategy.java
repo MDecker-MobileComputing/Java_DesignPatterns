@@ -2,7 +2,8 @@ package de.mide.patterns.strategy;
 
 
 /**
- * Strategy for "Euclidian Distance".
+ * Strategy for "Euclidian Distance" (linear distance between two points, 
+ * in German: "Luftlinie").
  */
 public class EuclidianDistanceStrategy implements IDistanceStrategy {
 
