@@ -1,5 +1,9 @@
 package de.mide.patterns.strategy;
 
+
+/**
+ * Strategy for "City Block Distance" (also called "Manhattan Distance").
+ */
 public class CityBlockDistanceStrategy implements IDistanceStrategy {
 
 	@Override

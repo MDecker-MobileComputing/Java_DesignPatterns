@@ -1,5 +1,9 @@
 package de.mide.patterns.strategy;
 
+
+/**
+ * Strategy for "Supremum Distance".
+ */
 public class SupremumDistanceStrategy implements IDistanceStrategy {
 
 	public double calculateDistance( Point point1, Point point2 ) {

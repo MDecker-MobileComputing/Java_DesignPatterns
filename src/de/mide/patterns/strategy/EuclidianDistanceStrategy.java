@@ -1,5 +1,9 @@
 package de.mide.patterns.strategy;
 
+
+/**
+ * Strategy for "Euclidian Distance".
+ */
 public class EuclidianDistanceStrategy implements IDistanceStrategy {
 
 	@Override
@@ -8,7 +12,6 @@ public class EuclidianDistanceStrategy implements IDistanceStrategy {
 		double deltaX = point2.x() - point1.x();
 		double deltaY = point2.y() - point1.y();
 				
-		return Math.sqrt( deltaX * deltaX - deltaY * deltaY );
+		return Math.sqrt( deltaX * deltaX + deltaY * deltaY );
 	}
-
 }
