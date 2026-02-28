@@ -80,7 +80,30 @@ public class Document {
 	
 	
 	/**
-	 * Writes message to STDOUT, that document is already
+	 * Set document to state "Approved" (final state).
+	 * 
+	 * @return {@code true} iff successful, namely 
+	 *         when document was in state "Review".
+	 */
+	public boolean toApproved() {
+		
+		return _documentState.toApproved( this );
+	}
+
+	
+	/**
+	 * Set document to state "Rejected" (final state).
+	 * 
+	 * @return {@code true} iff successful, namely 
+	 *         when document was in state "Review".
+	 */	
+	public boolean toRejected() {
+		
+		return _documentState.toRejected( this );
+	}
+	
+	/**
+	 * Write message to STDOUT, that document is already
 	 * in a particular state.
 	 * <br>
 	 * 
@@ -100,12 +123,59 @@ public class Document {
 	
 	
 	/**
-	 * Write message to STDOUT with the titel and
-	 * current state of the document.
+	 * Write message to STDOUT that says that the requested state transition
+	 * is not allowed.<br>
 	 * 
 	 * Example:
 	 * <pre>
-	 * Document 'Annual report 2026' is now in state 'Draft'.
+	 * Document "Annual Report 2026" is in state "Approved" and therefore 
+	 * cannot be moved to state "Draft". 
+	 * </pre>
+	 * 
+	 * @param targetState Target state which is not reachable from
+	 *                    the current state
+	 */
+	public void logTransitionNotAllowed( String targetState ) {
+
+		final String str = 
+			format( 
+				"Document \"%s\" is in state \"%s\" and therefore " + 
+			    "cannot be moved to state \"%s\".", 
+			    _title, _documentState.getStatusName(), targetState );
+			
+		System.out.println( str );
+	}
+	
+	
+	/**
+	 * Write message to STDOUT that describes a successful state transition.
+	 * <br>
+	 * 
+	 * Example:
+	 * <pre>
+	 * Document "Annual Report 2026" was moved to state "Approved".
+	 * </pre>
+	 * 
+	 * @param oldState State before the transition
+	 */
+	public void logTransition() {
+		
+		final String str = 
+			format(
+				"Document \"%s\" was moved to state \"%s\".",
+				_title, _documentState.getStatusName() );
+		
+		System.out.println( str );
+	}
+	
+	
+	/**
+	 * Write message to STDOUT with the titel and
+	 * current state of the document.<br>
+	 * 
+	 * Example:
+	 * <pre>
+	 * Document "Annual report 2026" is now in state "Draft".
 	 * </pre>
 	 */
 	public void logCurrentState() {
@@ -120,13 +190,13 @@ public class Document {
 	 * 
 	 * @return String with title of document and current state, e.g.: 
 	 *         <pre>
-	 *         Document 'Annual report 2026' is now in state 'Draft'.
+	 *         Document "Annual report 2026" is in state "Draft".
 	 *         </pre>
 	 */
 	@Override
 	public String toString() {
 		
-		return format( "Document \"%s\" is now in state \"%s\".",				 
+		return format( "Document \"%s\" is in state \"%s\".",				 
 					   _title, _documentState.getStatusName() );
 	}
 }

@@ -12,17 +12,22 @@ public class DocumentStateReview implements IDocumentState {
 	 * 
 	 * @return "Review"
 	 */
-	public String getStatusName() { return "Review"; }
+	public String getStatusName() { 
+		
+		return "Review"; 
+	}
 	
 	
 	/**
-	 * Change to state "Review".
+	 * Try to change state to "Review", but document
+	 * is already in state "Review."
 	 * 
-	 * @return {@code true} for successful change 
+	 * @return {@code false} because transition not  
+	 *         possible 
 	 */
 	@Override
 	public boolean toReview( Document document ) {
-
+		
 		document.logAlreadyInState();
 		
 		return false;
@@ -39,7 +44,43 @@ public class DocumentStateReview implements IDocumentState {
 
 		document.setState( new DocumentStateDraft() );
 
-		System.out.println( document.toString() );
+		document.logTransition();
+		
+		return true;
+	}
+
+
+	/**
+	 * Change document's state to "Approved".
+	 * 
+	 * @param document Document whose state is to be changed                 
+	 * 
+	 * @return {@code true} for successful change 
+	 */     
+	@Override
+	public boolean toApproved( Document document ) {
+		
+		document.setState( new DocumentStateApproved() );
+
+		document.logTransition();
+		
+		return true;
+	}
+
+	
+	/**
+	 * Change document's state to "Rejected".
+	 * 
+	 * @param document Document whose state is to be changed                 
+	 * 
+	 * @return {@code true} for successful change 
+	 */     
+	@Override
+	public boolean toRejected( Document document ) {
+
+		document.setState( new DocumentStateRejected() );
+
+		document.logTransition();
 		
 		return true;
 	}

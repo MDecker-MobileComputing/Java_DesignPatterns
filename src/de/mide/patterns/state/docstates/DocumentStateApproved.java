@@ -4,41 +4,40 @@ import de.mide.patterns.state.Document;
 
 
 /**
- * Initial state for the document workflow. A reviewer can
- * request changes, which reverts the document into this
- * state.
+ * One of the terminal states for the document workflow:
+ * The document was approved.
  */
-public class DocumentStateDraft implements IDocumentState {
+public class DocumentStateApproved implements IDocumentState {
 
 	/**
 	 * Getter for name of current status.
 	 * 
-	 * @return "Draft"
+	 * @return "Approved (terminal state)"
 	 */
 	@Override
 	public String getStatusName() { 
 		
-		return "Draft"; 
+		return "Approved (terminal state)"; 
 	}
 
 	
 	/**
-	 * Change document's state to "Review".
+	 * Try to change document's state to "Review" (won't work, 
+	 * because document is in terminal state).
 	 * 
-	 * @param document Document whose state is to be changed                 
+	 * @param document Document whose state is to be changed
 	 * 
-	 * @return {@code true} for successful change 
-	 */
+	 * @return {@code false} because requested state transition 
+	 *         is not allowed
+	 */   
 	@Override
 	public boolean toReview( Document document ) {
-
-		document.setState( new DocumentStateReview() );
-
-		document.logTransition();
 		
-		return true;
+		document.logTransitionNotAllowed( "Review" );
+		
+		return false;
 	}
-	
+
 	
 	/**
 	 * Try to change document's state to "Draft" (won't work). 
@@ -47,18 +46,19 @@ public class DocumentStateDraft implements IDocumentState {
 	 * 
 	 * @return {@code false} because requested state transition 
 	 *         is not allowed
-	 */
+	 */   
 	@Override
 	public boolean toDraft( Document document ) {
-
-		document.logAlreadyInState();
+		 
+		document.logTransitionNotAllowed( "Draft" );
 		
 		return false;
 	}
 
-
+	
 	/**
-	 * Try to change document's state to "Approved" (won't work). 
+	 * Try to change document's state to "Approved" (won't work,
+	 * because document is already in this state).
 	 * 
 	 * @param document Document whose state is to be changed
 	 * 
@@ -67,19 +67,19 @@ public class DocumentStateDraft implements IDocumentState {
 	 */
 	@Override
 	public boolean toApproved( Document document ) {
-
-		document.logTransitionNotAllowed( "Approved" );
+		
+		document.logAlreadyInState();
 		
 		return false;
 	}
 
-	
+
 	/**
 	 * Try to change document's state to "Rejected" (won't work). 
 	 * 
 	 * @param document Document whose state is to be changed
 	 * 
-	 * @return {@code false} because requested state transition
+	 * @return {@code false} because requested state transition 
 	 *         is not allowed
 	 */
 	@Override
@@ -89,4 +89,5 @@ public class DocumentStateDraft implements IDocumentState {
 		
 		return false;
 	}
+
 }

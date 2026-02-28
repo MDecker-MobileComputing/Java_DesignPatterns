@@ -10,6 +10,11 @@ import de.mide.patterns.state.Document;
  * All methods to change the state must start with
  * "to" (e.g., {@code toReview()}) and accept an
  * object of class {@link Document} as argument.
+ * <br><br>
+ * 
+ * If an implementing class of this interface represents
+ * a terminal state, then all state changes must be
+ * denied.
  */
 public interface IDocumentState {
 	
@@ -17,13 +22,14 @@ public interface IDocumentState {
 	/** 
 	 * Getter for name of current status.
 	 * 
-	 * @return Name of current status, e.g., "Draft" or "Review"
+	 * @return Name of current status, e.g., 
+	 *         "Draft" or "Approved (terminal state)"
 	 */
 	public String getStatusName();
 	
 	
 	/**
-	 * Send document from state "draft" to "review".
+	 * Try to change document's state to "Review".
 	 * 
 	 * @param document Document for which the state is
 	 *                 to be changed
@@ -34,7 +40,7 @@ public interface IDocumentState {
 	
 	
 	/**
-	 * Send document from state "review" to "draft"
+	 * Try to change document's state to "Draft"
 	 * (reviewer requests changes).
 	 * 
 	 * @param document Document for which the state is
@@ -43,5 +49,27 @@ public interface IDocumentState {
 	 * @return {@code true} iff the state change was successful
 	 */
 	public boolean toDraft( Document document );
+	
+	
+	/**
+	 * Try to change document's state to "Approved" (final state).
+	 * 
+	 * @param document Document for which the state is
+	 *                 to be changed
+	 * 
+	 * @return {@code true} iff the state change was successful
+	 */
+	public boolean toApproved( Document document );
+
+	
+	/**
+	 * Try to change document's state to "Rejected" (final state).
+	 * 
+	 * @param document Document for which the state is
+	 *                 to be changed
+	 * 
+	 * @return {@code true} iff the state change was successful
+	 */
+	public boolean toRejected( Document document );
 	 
 }
