@@ -49,17 +49,27 @@ public class Main {
 		
 		System.out.println();
 		
-		final Document docHappyPath5 = new Document( "Test: Try illegal transitions on way to approval" );
+		final Document docHappyPath5 = new Document( "Test: Discarded after review" );
 		docHappyPath5.logCurrentState();
-		docHappyPath5.toDraft();    // illegal: already in this state
-		docHappyPath5.toApproved(); // illegal: unreachable state
-		docHappyPath5.toRejected(); // illegal: unreachable state
-		docHappyPath5.toReview();   // legal
-		docHappyPath5.toReview();   // illegal: already in this state
-		docHappyPath5.toApproved(); // legal
-		docHappyPath5.toReview();   // illegal: unreachable state
-		docHappyPath5.toRejected(); // illegal: unreachable state
-		docHappyPath5.toDraft();    // illegal: unreachable state
+		docHappyPath5.toReview();
+		docHappyPath5.toDraft(); // reviewer requests changes
+		docHappyPath5.toDiscarded();
+				
+		System.out.println();
+		
+		final Document docHappyPath6 = new Document( "Test: Try illegal transitions on way to approval" );
+		docHappyPath6.logCurrentState();
+		docHappyPath6.toDraft();     // illegal: already in this state
+		docHappyPath6.toApproved();  // illegal: unreachable state
+		docHappyPath6.toRejected();  // illegal: unreachable state
+		docHappyPath6.toReview();    // legal
+		docHappyPath6.toReview();    // illegal: already in this state
+		docHappyPath6.toDiscarded(); // illegal: unreachable state
+		docHappyPath6.toApproved();  // legal
+		docHappyPath6.toReview();    // illegal: unreachable state
+		docHappyPath6.toRejected();  // illegal: unreachable state
+		docHappyPath6.toDraft();     // illegal: unreachable state
+		docHappyPath6.toDiscarded(); // illegal: unreachable state
 				
 		System.out.println();
 	}

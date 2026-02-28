@@ -85,4 +85,21 @@ public class DocumentStateReview implements IDocumentState {
 		
 		return true;
 	}
+
+
+	/**
+	 * Try to change document's state to "Discarded" (won't work). 
+	 * 
+	 * @param document Document whose state is to be changed
+	 * 
+	 * @return {@code false} because requested state transition 
+	 *         is not allowed
+	 */     
+	@Override
+	public boolean toDiscarded( Document document ) {
+
+		document.logTransitionNotAllowed( "Discarded" );
+		
+		return false;
+	}
 }

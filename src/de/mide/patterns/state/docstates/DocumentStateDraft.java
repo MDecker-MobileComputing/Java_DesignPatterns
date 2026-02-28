@@ -4,9 +4,8 @@ import de.mide.patterns.state.Document;
 
 
 /**
- * Initial state for the document workflow. A reviewer can
- * request changes, which reverts the document into this
- * state.
+ * Initial state for the document workflow. This is the only
+ * state, in which the document can be edited by the author.
  */
 public class DocumentStateDraft implements IDocumentState {
 
@@ -88,5 +87,23 @@ public class DocumentStateDraft implements IDocumentState {
 		document.logTransitionNotAllowed( "Rejected" );
 		
 		return false;
+	}
+
+
+	/**
+	 * Change document's state to "Discarded".
+	 * 
+	 * @param document Document whose state is to be changed                 
+	 * 
+	 * @return {@code true} for successful change 
+	 */
+	@Override
+	public boolean toDiscarded( Document document ) {
+
+		document.setState( new DocumentStateDiscarded() );
+
+		document.logTransition();
+		
+		return true;
 	}
 }

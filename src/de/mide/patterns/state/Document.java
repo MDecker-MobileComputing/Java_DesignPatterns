@@ -102,6 +102,19 @@ public class Document {
 		return _documentState.toRejected( this );
 	}
 	
+	
+	/**
+	 * Set document to state "Discarded" (final state).
+	 * 
+	 * @return {@code true} iff successful, namely 
+	 *         when document was in state "Draft".
+	 */	
+	public boolean toDiscarded() {
+		
+		return _documentState.toDiscarded( this );
+	}
+	
+	
 	/**
 	 * Write message to STDOUT, that document is already
 	 * in a particular state.

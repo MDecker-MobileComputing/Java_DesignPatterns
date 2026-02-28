@@ -71,5 +71,16 @@ public interface IDocumentState {
 	 * @return {@code true} iff the state change was successful
 	 */
 	public boolean toRejected( Document document );
+
+	
+	/**
+	 * Try to change document's state to "Discarded" (final state).
+	 * 
+	 * @param document Document for which the state is
+	 *                 to be changed
+	 * 
+	 * @return {@code true} iff the state change was successful
+	 */
+	public boolean toDiscarded( Document document );
 	 
 }
