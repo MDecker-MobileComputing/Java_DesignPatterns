@@ -2,9 +2,10 @@ package de.mide.patterns.state.docstates;
 
 import de.mide.patterns.state.Document;
 
+
 /**
  * One of the terminal states for the document workflow:
- * The document was approved.
+ * The document was rejected.
  */
 public class DocumentStateRejected implements IDocumentState {
 

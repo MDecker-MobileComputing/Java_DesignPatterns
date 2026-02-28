@@ -48,5 +48,19 @@ public class Main {
 		docHappyPath4.toRejected();
 		
 		System.out.println();
+		
+		final Document docHappyPath5 = new Document( "Test: Try illegal transitions on way to approval" );
+		docHappyPath5.logCurrentState();
+		docHappyPath5.toDraft();    // illegal: already in this state
+		docHappyPath5.toApproved(); // illegal: unreachable state
+		docHappyPath5.toRejected(); // illegal: unreachable state
+		docHappyPath5.toReview();   // legal
+		docHappyPath5.toReview();   // illegal: already in this state
+		docHappyPath5.toApproved(); // legal
+		docHappyPath5.toReview();   // illegal: unreachable state
+		docHappyPath5.toRejected(); // illegal: unreachable state
+		docHappyPath5.toDraft();    // illegal: unreachable state
+				
+		System.out.println();
 	}
 }

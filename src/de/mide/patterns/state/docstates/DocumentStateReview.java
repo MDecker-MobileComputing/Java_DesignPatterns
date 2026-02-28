@@ -2,6 +2,7 @@ package de.mide.patterns.state.docstates;
 
 import de.mide.patterns.state.Document;
 
+
 /**
  * State for document that is under review.
  */
