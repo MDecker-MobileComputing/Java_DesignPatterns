@@ -58,12 +58,24 @@ public class Document {
 	/**
 	 * Send document to review.
 	 * 
-	 * @return {@code true} iff successful, namely when
-	 *         document was in state "Draft".
+	 * @return {@code true} iff successful, namely 
+	 *         when document was in state "Draft".
 	 */
 	public boolean toReview() {
 		
 		return _documentState.toReview( this );
+	}
+	
+	
+	/**
+	 * Send document back to state "draft".
+	 * 
+	 * @return {@code true} iff successful, namely 
+	 *         when document was in state "Review".
+	 */
+	public boolean toDraft() {
+		
+		return _documentState.toDraft( this );
 	}
 	
 	
@@ -86,6 +98,16 @@ public class Document {
 		System.out.println( str );
 	}
 	
+	
+	/**
+	 * Write message to STDOUT with the titel and
+	 * current state of the document.
+	 * 
+	 * Example:
+	 * <pre>
+	 * Document 'Annual report 2026' is now in state 'Draft'.
+	 * </pre>
+	 */
 	public void logCurrentState() {
 		
 		System.out.println( toString() );

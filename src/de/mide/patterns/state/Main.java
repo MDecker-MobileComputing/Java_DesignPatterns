@@ -20,8 +20,11 @@ public class Main {
 		
 		doc.logCurrentState();
 		
-		doc.toReview();
-		doc.toReview();
+		doc.toReview(); // Draft  -> Review
+		doc.toReview(); // Review -> Review, will fail
+		
+		doc.toDraft(); // Review -> Draft
+		doc.toDraft(); // Draft  -> Draft, will fail
 		
 		System.out.println();
 	}

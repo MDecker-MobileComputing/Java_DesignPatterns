@@ -16,7 +16,7 @@ public class DocumentStateReview implements IDocumentState {
 	
 	
 	/**
-	 * Change to review state.
+	 * Change to state "Review".
 	 * 
 	 * @return {@code true} for successful change 
 	 */
@@ -26,5 +26,21 @@ public class DocumentStateReview implements IDocumentState {
 		document.logAlreadyInState();
 		
 		return false;
+	}
+
+
+	/**
+	 * Change to state "Draft" (reviewer requests changes).
+	 * 
+	 * @return {@code true} for successful change
+	 */
+	@Override
+	public boolean toDraft( Document document ) {
+
+		document.setState( new DocumentStateDraft() );
+
+		System.out.println( document.toString() );
+		
+		return true;
 	}
 }
