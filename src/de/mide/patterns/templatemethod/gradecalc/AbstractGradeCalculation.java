@@ -1,6 +1,8 @@
-package de.mide.patterns.templatemethod;
+package de.mide.patterns.templatemethod.gradecalc;
 
 import java.util.Optional;
+
+import de.mide.patterns.templatemethod.GradeException;
 
 /**
  * Class with template method for calculation of final grade

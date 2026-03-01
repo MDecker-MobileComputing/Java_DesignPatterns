@@ -1,4 +1,4 @@
-package de.mide.patterns.templatemethod;
+package de.mide.patterns.templatemethod.gradecalc;
 
 import static java.lang.String.format;
 import static java.math.RoundingMode.HALF_UP;
@@ -157,5 +157,4 @@ public class StandardExamGradeCalculation extends AbstractGradeCalculation {
 				
 		return gradeRounded + " (" + gradeText + ")";
 	}
-
 }

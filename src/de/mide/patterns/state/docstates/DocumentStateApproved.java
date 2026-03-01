@@ -106,5 +106,4 @@ public class DocumentStateApproved implements IDocumentState {
 		
 		return false;
 	}
-
 }

@@ -1,4 +1,4 @@
-package de.mide.patterns.templatemethod;
+package de.mide.patterns.templatemethod.gradecalc;
 
 import static java.lang.Math.ceil;
 import static java.lang.Math.floor;

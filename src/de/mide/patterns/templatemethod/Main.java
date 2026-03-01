@@ -1,5 +1,8 @@
 package de.mide.patterns.templatemethod;
 
+import de.mide.patterns.templatemethod.gradecalc.AbstractGradeCalculation;
+import de.mide.patterns.templatemethod.gradecalc.MockExamGradeCalculation;
+import de.mide.patterns.templatemethod.gradecalc.StandardExamGradeCalculation;
 
 /**
  * Test driver for grade calculation.
