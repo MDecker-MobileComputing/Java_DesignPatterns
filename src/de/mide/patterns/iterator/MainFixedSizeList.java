@@ -14,6 +14,8 @@ public class MainFixedSizeList {
 	 */
 	public static void main( String[] args ) throws IterableListException {
 		
+		System.out.println();
+		
 		final AbstractIteratableList<String> fixedSizeList = new FixedSizeList<>( 3 );
 		
 		try {
@@ -50,9 +52,10 @@ public class MainFixedSizeList {
 			
 			String element = iterator.nextElement();
 			System.out.println( "Element from iterator: " + element );
-			System.out.println( "Elements remaining in iterator: " + iterator.remainingSize() );
+			System.out.println( "Elements remaining in iterator: " + 
+									iterator.numberOfRemainingElements() );
 		}
 	
-		System.out.println( "Element after last element:" + iterator.nextElement() );
+		System.out.println( "Element after last element: " + iterator.nextElement() );
 	}
 }

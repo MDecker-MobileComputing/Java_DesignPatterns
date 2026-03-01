@@ -33,7 +33,7 @@ public class FixedSizeListIterator<T> implements IteratorInterface<T> {
 	 * @return Number of elements left for iteration
 	 */
 	@Override
-	public int remainingSize() {
+	public int numberOfRemainingElements() {
 		
 		return _array.length - _indexOfNextElement;
 	}

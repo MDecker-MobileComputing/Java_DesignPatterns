@@ -13,14 +13,12 @@ package de.mide.patterns.iterator;
 public interface IteratorInterface<T> {
 
 	/**
+	 * Getter for number of remaining elements 
+	 * in iteration.
 	 * 
-	 * 
-	 * Warning: Calling this method might be an expensive
-	 * operation!
-	 * 
-	 * @return Remaining number of elements to iterate over
+	 * @return Number of remaining elements
 	 */
-	public int remainingSize();
+	public int numberOfRemainingElements();
 	
 	
 	/**
