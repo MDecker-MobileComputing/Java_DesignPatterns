@@ -16,7 +16,7 @@ public class MainFixedSizeList {
 		
 		System.out.println();
 		
-		final AbstractIteratableList<String> fixedSizeList = new FixedSizeList<>( 3 );
+		final AbstractIteratableList<String> fixedSizeList = new FixedSizeList<>( 5 );
 		
 		try {
 			
@@ -29,18 +29,10 @@ public class MainFixedSizeList {
 			        ex.getMessage() );
 		}
 		
-		try {
-			
-			fixedSizeList.add( "abc" );
-			fixedSizeList.add( "def" );
-			fixedSizeList.add( "ghi" );
-			fixedSizeList.add( "jkl" ); // will throw exception
-		}
-		catch ( IterableListException ex ) {
-			
-			System.out.println( 
-					"Exception when adding element to list: " + ex.getMessage() );
-		}
+		fixedSizeList.add( "abc" );
+		fixedSizeList.add( "def" );
+		fixedSizeList.add( "ghi" );
+		fixedSizeList.add( "jkl" ); 
 		
 		System.out.println( 
 				"Number of elements in list: " + fixedSizeList.getNumberOfElements() );
@@ -48,6 +40,9 @@ public class MainFixedSizeList {
 		System.out.println();
 		
 		final IteratorInterface<String> iterator = fixedSizeList.getIterator();
+		
+		fixedSizeList.add( "mno" ); // won't be contained in iterator obtained just before 
+		
 		while ( iterator.hasMoreElements() ) {
 			
 			String element = iterator.nextElement();
@@ -57,5 +52,15 @@ public class MainFixedSizeList {
 		}
 	
 		System.out.println( "Element after last element: " + iterator.nextElement() );
+		
+		try {
+			
+			fixedSizeList.add( "xyz" );
+		}
+		catch ( IterableListException ex ) {
+			
+			System.out.println( 
+					"Exception when adding element to list: " + ex.getMessage() );			
+		}
 	}
 }
