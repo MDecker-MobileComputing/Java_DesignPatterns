@@ -3,6 +3,7 @@ package de.mide.patterns.iterator.fixedsize;
 import static java.util.Arrays.copyOf;
 
 import de.mide.patterns.iterator.AbstractIteratableList;
+import de.mide.patterns.iterator.GeneralListIterator;
 import de.mide.patterns.iterator.IterableListException;
 import de.mide.patterns.iterator.IteratorInterface;
 
@@ -104,11 +105,11 @@ public class FixedSizeList<T> extends AbstractIteratableList<T> {
 		if ( _nextInsertIndex == 0 ) {
 			
 			throw new IterableListException( 
-					"Cannot create iterator for empty list" );
+					"Cannot create iterator for empty FixedSizeList" );
 		}
 		
 		final T[] arrayCopy = copyOf( _array, _array.length );
 		
-		return new FixedSizeListIterator<>( arrayCopy );
+		return new GeneralListIterator<>( arrayCopy );
 	}
 }

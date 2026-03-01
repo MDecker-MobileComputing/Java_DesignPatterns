@@ -4,10 +4,11 @@ import de.mide.patterns.iterator.AbstractIteratableList;
 import de.mide.patterns.iterator.IterableListException;
 import de.mide.patterns.iterator.IteratorInterface;
 
+
 /**
  * Test for class {@link FixedSizeList}.
  */
-public class MainFixedSizeList {
+public class Main_FixedSizeList {
 
 	 
 	/**
@@ -48,7 +49,7 @@ public class MainFixedSizeList {
 		
 		while ( iterator.hasMoreElements() ) {
 			
-			String element = iterator.nextElement();
+			final String element = iterator.nextElement();
 			System.out.println( "Element from iterator: " + element );
 			System.out.println( "Elements remaining in iterator: " + 
 									iterator.numberOfRemainingElements() );

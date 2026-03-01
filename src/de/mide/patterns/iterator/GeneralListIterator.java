@@ -1,13 +1,13 @@
-package de.mide.patterns.iterator.fixedsize;
+package de.mide.patterns.iterator;
 
-import de.mide.patterns.iterator.IteratorInterface;
 
 /**
- * Iterator for elements stored in {@link FixedSizeList}.
+ * Iterator for elements stored in an {@link AbstractIteratableList}.
+ * Internally, the elements are stored in an array. 
  * 
  * @param <T> Type for elements
  */
-public class FixedSizeListIterator<T> implements IteratorInterface<T> {
+public class GeneralListIterator<T> implements IteratorInterface<T> {
 
 	/** Array with data for iteration. */
 	private T[] _array = null;
@@ -22,7 +22,7 @@ public class FixedSizeListIterator<T> implements IteratorInterface<T> {
 	 * 
 	 * @param array Array with elements for iteration
 	 */
-	public FixedSizeListIterator( T[] array ) {
+	public GeneralListIterator( T[] array ) {
 		
 		_array = array;
 	}
@@ -74,7 +74,7 @@ public class FixedSizeListIterator<T> implements IteratorInterface<T> {
 			return null;
 		}
 		
-		T result = _array[ _indexOfNextElement ];
+		final T result = _array[ _indexOfNextElement ];
 		
 		_indexOfNextElement++;
 		

@@ -7,6 +7,12 @@ package de.mide.patterns.iterator;
  * that implements this interface, you can iterate over 
  * the contents of the list that returned the object 
  * only once!
+ * <br><br>
+ * 
+ * Usually the author adds letter "I" at beginning
+ * of interface names, but "IIterator" looks so strange,
+ * therefore the name {@code IteratorInterface} was
+ * chosen.
  * 
  * @param <T> Type of the objects to iterate over.
  */
