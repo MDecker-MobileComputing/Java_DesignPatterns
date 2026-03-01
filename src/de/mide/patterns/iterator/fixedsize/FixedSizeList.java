@@ -1,6 +1,10 @@
-package de.mide.patterns.iterator;
+package de.mide.patterns.iterator.fixedsize;
 
 import static java.util.Arrays.copyOf;
+
+import de.mide.patterns.iterator.AbstractIteratableList;
+import de.mide.patterns.iterator.IterableListException;
+import de.mide.patterns.iterator.IteratorInterface;
 
 
 /**

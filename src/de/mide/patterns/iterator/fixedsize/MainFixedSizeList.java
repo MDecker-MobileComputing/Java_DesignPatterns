@@ -1,5 +1,8 @@
-package de.mide.patterns.iterator;
+package de.mide.patterns.iterator.fixedsize;
 
+import de.mide.patterns.iterator.AbstractIteratableList;
+import de.mide.patterns.iterator.IterableListException;
+import de.mide.patterns.iterator.IteratorInterface;
 
 /**
  * Test for class {@link FixedSizeList}.
@@ -51,7 +54,7 @@ public class MainFixedSizeList {
 									iterator.numberOfRemainingElements() );
 		}
 	
-		System.out.println( "Element after last element: " + iterator.nextElement() );
+		System.out.println( "Element after last element: " + iterator.nextElement() + "\n" );
 		
 		try {
 			

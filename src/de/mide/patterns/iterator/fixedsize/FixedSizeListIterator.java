@@ -1,4 +1,6 @@
-package de.mide.patterns.iterator;
+package de.mide.patterns.iterator.fixedsize;
+
+import de.mide.patterns.iterator.IteratorInterface;
 
 /**
  * Iterator for elements stored in {@link FixedSizeList}.
