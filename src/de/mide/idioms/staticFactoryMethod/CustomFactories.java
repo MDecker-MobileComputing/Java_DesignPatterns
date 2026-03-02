@@ -2,6 +2,7 @@ package de.mide.idioms.staticFactoryMethod;
 
 import java.util.HashMap;
 
+
 public class CustomFactories {
 
 	/**

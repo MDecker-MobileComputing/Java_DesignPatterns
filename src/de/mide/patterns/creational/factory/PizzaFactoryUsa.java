@@ -10,6 +10,7 @@ import de.mide.patterns.creational.factory.pizzas.PepperoniPizzaUsa;
  */
 public class PizzaFactoryUsa extends AbstractPizzaFactory {
 
+	
 	@Override
 	protected AbstractPizza createPizza( String pizzaType ) throws PizzaException {
 		

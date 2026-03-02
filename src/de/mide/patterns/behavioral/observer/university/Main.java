@@ -1,5 +1,6 @@
 package de.mide.patterns.behavioral.observer.university;
 
+
 /**
  * Test driver for pattern "Observer" (university example).
  */

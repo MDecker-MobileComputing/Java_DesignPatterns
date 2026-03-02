@@ -1,5 +1,6 @@
 package de.mide.patterns.behavioral.strategy;
 
+
 /**
  * "Context" object using a strategy object.
  */

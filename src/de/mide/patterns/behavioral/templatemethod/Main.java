@@ -10,8 +10,10 @@ import de.mide.patterns.behavioral.templatemethod.gradecalc.StandardExamGradeCal
  */
 public class Main {
 
+	/** Object implementing pattern "template method". */
 	private static AbstractGradeCalculation sGradeCalculation = null;
 	
+	/** Counter for number of calculations that were performed. */
 	private static int sNumberCalculations = 0;
 
 	

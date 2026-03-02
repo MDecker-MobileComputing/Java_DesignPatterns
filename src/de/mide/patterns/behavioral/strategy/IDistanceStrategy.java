@@ -7,6 +7,7 @@ package de.mide.patterns.behavioral.strategy;
  */
 public interface IDistanceStrategy {
 	
+	
 	/**
 	 * Calculate the distance between two points.
 	 * 

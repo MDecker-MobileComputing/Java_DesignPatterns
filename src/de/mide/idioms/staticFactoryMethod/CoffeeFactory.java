@@ -1,5 +1,6 @@
 package de.mide.idioms.staticFactoryMethod;
 
+
 @SuppressWarnings("serial")
 class CoffeeException extends Exception {
 	
