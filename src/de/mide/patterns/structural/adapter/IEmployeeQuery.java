@@ -7,7 +7,13 @@ import java.util.Optional;
  */
 public interface IEmployeeQuery {
 
-	public Optional<EmployeeRecord> queryEmployee( int employeeID ) {
-		
-	}
+	/**
+	 * Query details about employee.
+	 * 
+	 * @param employeeID String with employee ID, e.g. personnel number
+	 * 
+	 * @return Optional will contain object with employee record if
+	 *         an employee was found for {@code employeeID}
+	 */
+	public Optional<EmployeeRecord> queryEmployee( String employeeID );
 }
