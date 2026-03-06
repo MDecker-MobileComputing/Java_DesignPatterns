@@ -17,8 +17,7 @@ public class Main {
 		
 		System.out.println();
 		
-		final ICalculation calcEngine = new CalculationEngine();
-		final ICalculation calcProxy  = new CalculationProxy( calcEngine );
+		final ICalculation calcProxy = new CalculationProxy();
 		
 		System.out.println( "1+2: " + calcProxy.cheapCalculation( 1, 2 )    );
 		

@@ -23,13 +23,12 @@ public class CalculationProxy implements ICalculation {
 	
 	
 	/**
-	 * Constructor
-	 * 
-	 * @param calc Object to be "proxied"
+	 * Constructor: creates the proxied object (subject), namely
+	 * an instance of {@link CalculationEngine}.
 	 */
-	public CalculationProxy( ICalculation calc ) {
+	public CalculationProxy() {
 		
-		_calcEngine = calc;
+		_calcEngine = new CalculationEngine();
 	}
 	
 	
