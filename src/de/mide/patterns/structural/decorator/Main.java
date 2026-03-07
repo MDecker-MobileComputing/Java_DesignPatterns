@@ -1,6 +1,7 @@
 package de.mide.patterns.structural.decorator;
 
 import de.mide.patterns.structural.decorator.coffeedecorators.SugarDecoractor;
+import de.mide.patterns.structural.decorator.coffeedecorators.SyrupDecorator;
 
 
 /**
@@ -19,12 +20,18 @@ public class Main {
 		System.out.println();
 	
 		
-		AbstractCoffee filterCoffee = new FilterCoffee();
-		AbstractCoffee filterCoffeeWithSugar = new SugarDecoractor( filterCoffee );
+		final AbstractCoffee filterCoffee = new FilterCoffee();
+		final AbstractCoffee filterCoffeeWithSugar 
+							= new SugarDecoractor( filterCoffee );
 		
 		System.out.println( filterCoffeeWithSugar );
 		
+		// several decorators can be added to the same coffee
+		final AbstractCoffee filterCoffeeWithSugarAndSyrup 
+						= new SyrupDecorator( filterCoffeeWithSugar );
+		
+		System.out.println( filterCoffeeWithSugarAndSyrup );
+		
 		System.out.println();
-	}
-	
+	}	
 }

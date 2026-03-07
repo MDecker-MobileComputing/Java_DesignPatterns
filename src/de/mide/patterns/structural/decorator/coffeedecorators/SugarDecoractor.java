@@ -2,8 +2,9 @@ package de.mide.patterns.structural.decorator.coffeedecorators;
 
 import de.mide.patterns.structural.decorator.AbstractCoffee;
 
+
 /**
- * Decorator to add sugar to coffee.
+ * Decorator to add sugar to the coffee.
  */
 public class SugarDecoractor extends AbstractCoffeeDecorator {
 
@@ -11,7 +12,7 @@ public class SugarDecoractor extends AbstractCoffeeDecorator {
 	/**
 	 * Constructor.
 	 * 
-	 * @param coffee Coffee to be decorated
+	 * @param coffee Coffee to be decorated with sugar
 	 */
 	public SugarDecoractor( AbstractCoffee coffee ) {
 		
