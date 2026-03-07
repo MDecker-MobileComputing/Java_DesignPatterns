@@ -4,7 +4,7 @@ package de.mide.patterns.structural.decorator;
 /**
  * Filter coffee (drip coffee).
  */
-public class FilterCoffee implements ICoffee {
+public class FilterCoffee extends AbstractCoffee {
 
 	
 	/**

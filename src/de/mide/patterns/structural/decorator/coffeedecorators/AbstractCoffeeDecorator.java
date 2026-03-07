@@ -1,16 +1,16 @@
 package de.mide.patterns.structural.decorator.coffeedecorators;
 
-import de.mide.patterns.structural.decorator.ICoffee;
+import de.mide.patterns.structural.decorator.AbstractCoffee;
 
 
 /**
  * Abstract super class for all coffee decorators.
  */
-public abstract class AbstractCoffeeDecorator 
-							implements ICoffee {
+public abstract class AbstractCoffeeDecorator extends AbstractCoffee { 
+							
 
 	/** Coffee speciality to be decorated. */
-	protected ICoffee _decoratedCoffee = null;
+	protected AbstractCoffee _decoratedCoffee = null;
 	
 	
 	/**
@@ -18,7 +18,7 @@ public abstract class AbstractCoffeeDecorator
 	 * 
 	 * @param coffeeSpeciality Coffee to be decorated
 	 */
-	public AbstractCoffeeDecorator( ICoffee coffeeSpeciality ) {
+	public AbstractCoffeeDecorator( AbstractCoffee coffeeSpeciality ) {
 		
 		_decoratedCoffee = coffeeSpeciality;
 	}	

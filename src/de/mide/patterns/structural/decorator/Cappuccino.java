@@ -4,7 +4,7 @@ package de.mide.patterns.structural.decorator;
 /**
  * Cappuccino (espresso with steamed milk and foam).
  */
-public class Cappuccino implements ICoffee {
+public class Cappuccino extends AbstractCoffee {
 
 	
     /**

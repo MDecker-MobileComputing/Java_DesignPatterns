@@ -19,8 +19,8 @@ public class Main {
 		System.out.println();
 	
 		
-		ICoffee filterCoffee = new FilterCoffee();
-		ICoffee filterCoffeeWithSugar = new SugarDecoractor( filterCoffee );
+		AbstractCoffee filterCoffee = new FilterCoffee();
+		AbstractCoffee filterCoffeeWithSugar = new SugarDecoractor( filterCoffee );
 		
 		System.out.println( filterCoffeeWithSugar );
 		
