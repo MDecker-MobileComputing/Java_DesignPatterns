@@ -4,10 +4,11 @@ package de.mide.patterns.structural.decorator;
 /**
  * Cappuccino (espresso with steamed milk and foam).
  */
-public class Cappuccino implements ICoffeeSpeciality {
+public class Cappuccino implements ICoffee {
 
+	
     /**
-     * Getter for price.
+     * Getter for price of coffee in local currency.
      * 
      * @return 350 (3.50)
      */

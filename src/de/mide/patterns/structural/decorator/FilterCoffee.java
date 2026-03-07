@@ -4,10 +4,11 @@ package de.mide.patterns.structural.decorator;
 /**
  * Filter coffee (drip coffee).
  */
-public class FilterCoffee implements ICoffeeSpeciality {
+public class FilterCoffee implements ICoffee {
 
+	
 	/**
-	 * Getter for price.
+	 * Getter for price of coffee in local currency.
 	 * 
 	 * @return 250 (2.50)
 	 */
