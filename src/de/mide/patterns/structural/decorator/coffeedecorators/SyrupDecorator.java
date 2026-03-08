@@ -40,6 +40,6 @@ public class SyrupDecorator extends AbstractCoffeeDecorator {
 	@Override
 	public String getName() {
 		
-		return _decoratedCoffee.getName() + " / syrup";
+		return _decoratedCoffee.getName() + " + syrup";
 	}
 }
