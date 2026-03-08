@@ -14,7 +14,7 @@ public class Cappuccino extends AbstractCoffee {
      */
 	@Override
 	public int getPrice() {
-		// TODO Auto-generated method stub
+
 		return 450;
 	}
 
