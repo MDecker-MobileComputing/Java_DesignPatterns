@@ -56,7 +56,12 @@ public class EmployeeAdapter implements IEmployeeQuery {
 		
 		final String resultArray[] = 
 					_adaptee.getEmployeeData( employeeNumber ); // calling adapted method
-		if ( resultArray == null ) { // employee found?
+		if ( resultArray == null || resultArray.length < 3 ) { // employee found?
+			
+			return empty();
+		}
+		
+		if ( resultArray.length < 3 ) {
 			
 			return empty();
 		}
