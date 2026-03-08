@@ -20,7 +20,7 @@ public abstract class AbstractCoffee {
 	 * 
 	 * @return Name of coffee speciality, e.g., cappuccino or espresso;
 	 *         might contain additions (milk, sugar, honey, syrup)  
-	 *         or toppings (e.g., chocolate sprinkles)
+	 *         or toppings (e.g., chocolate sprinkles, crushed cookies)
 	 */
 	public abstract String getName();
 	
