@@ -42,6 +42,6 @@ public class ChocolateSprinklesDecorator extends AbstractCoffeeDecorator {
 	@Override
 	public String getName() {
 
-		return _decoratedCoffee.getName() + " / chocolate sprinkles";
+		return _decoratedCoffee.getName() + " + chocolate sprinkles";
 	}
 }
