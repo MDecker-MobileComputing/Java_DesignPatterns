@@ -3,7 +3,8 @@ package de.mide.idioms;
 
 /**
  * One object of this class represents a student at a university.
- * The equals method is an example for an "idiom".
+ * The implementation of method {@link #equals(Object)} an example 
+ * for an "idiom".
  */
 public class Student {
 
@@ -24,9 +25,19 @@ public class Student {
 	}
 	
 
+	/**
+	 * Getter for student's full name.
+	 * 
+	 * @return Name of student (first and last name)
+	 */
 	public String getName() { return _name; }
 	
 
+	/**
+	 * Getter for student's enrollment/matriculation number.
+	 * 
+	 * @return Enrollment number of student
+	 */
 	public int getEnrollmentNumber() { return _enrollmentNumber; }
 	
 
