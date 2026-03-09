@@ -1,4 +1,4 @@
-package de.mide.patterns.structural.facade.component;
+package de.mide.patterns.structural.facade.components;
 
 
 /**

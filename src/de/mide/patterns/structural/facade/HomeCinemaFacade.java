@@ -1,12 +1,12 @@
 package de.mide.patterns.structural.facade;
 
-import static de.mide.patterns.structural.facade.component.ScreenController.ScreenState.OFF;
-import static de.mide.patterns.structural.facade.component.ScreenController.ScreenState.ON;
+import static de.mide.patterns.structural.facade.components.ScreenController.ScreenState.OFF;
+import static de.mide.patterns.structural.facade.components.ScreenController.ScreenState.ON;
 
-import de.mide.patterns.structural.facade.component.AmbientLighting;
-import de.mide.patterns.structural.facade.component.AudioManager;
-import de.mide.patterns.structural.facade.component.ScreenController;
-import de.mide.patterns.structural.facade.component.TVReceiver;
+import de.mide.patterns.structural.facade.components.AmbientLighting;
+import de.mide.patterns.structural.facade.components.AudioManager;
+import de.mide.patterns.structural.facade.components.ScreenController;
+import de.mide.patterns.structural.facade.components.TVReceiver;
 
 
 /**
