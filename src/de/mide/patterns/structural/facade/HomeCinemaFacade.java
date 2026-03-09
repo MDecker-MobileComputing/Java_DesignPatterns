@@ -19,7 +19,7 @@ public class HomeCinemaFacade {
 	
 	private AudioManager _audioManager = new AudioManager(); 
 		
-	private ScreenController _scController = new ScreenController();
+	private ScreenController _screenController = new ScreenController();
 	
 	private TVReceiver _tvReceiver = new TVReceiver();
 		
@@ -32,7 +32,7 @@ public class HomeCinemaFacade {
 	public void startTV( int channel ) {
 		
 		_ambientLighting.switchOn();
-		_scController.setState( ON );
+		_screenController.setState( ON );
 		
 		_tvReceiver.setState( true );
 		_tvReceiver.setChannel( channel );
@@ -80,7 +80,7 @@ public class HomeCinemaFacade {
 	public void switchOff() {
 		
 		_ambientLighting.switchOff();
-		_scController.setState( OFF );
+		_screenController.setState( OFF );
 		_tvReceiver.setState( false );
 	}
 }
