@@ -19,11 +19,11 @@ public class Main {
 		
 		final ICalculation calcProxy = new CalculationProxy();
 		
-		System.out.println( "1+2: " + calcProxy.cheapCalculation( 1, 2 )    );
+		System.out.println( "1+2: " + calcProxy.cheapCalculation( 1, 2 ) );
 		
-		System.out.println( "2*3: " + calcProxy.expensiveCalculation( 2, 3) );
-		System.out.println( "3*4: " + calcProxy.expensiveCalculation( 3, 4) );
-		System.out.println( "2*3: " + calcProxy.expensiveCalculation( 2, 3) ); // cache hit
+		System.out.println( "2*3: " + calcProxy.expensiveCalculation( 2, 3 ) );
+		System.out.println( "3*4: " + calcProxy.expensiveCalculation( 3, 4 ) );
+		System.out.println( "2*3: " + calcProxy.expensiveCalculation( 2, 3 ) ); // cache hit
 				
 		System.out.println();
 	}
