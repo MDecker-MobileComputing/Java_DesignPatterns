@@ -23,7 +23,7 @@ public class Main {
 		
 		System.out.println();
 		
-		facade.switchToChannel( 64);
+		facade.switchToChannel( 64 );
 		
 		System.out.println();
 		

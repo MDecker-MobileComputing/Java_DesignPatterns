@@ -21,6 +21,8 @@ public class TVReceiver {
 	 */
 	public void setState( boolean isOn ) {
 		
+		_isOn = isOn;
+		
 		if ( _isOn ) {
 		
 			System.out.println( 
