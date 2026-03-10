@@ -116,6 +116,43 @@ public class Document {
 	
 	
 	/**
+	 * Write message to STDOUT that describes a successful state transition.
+	 * <br>
+	 * 
+	 * Example:
+	 * <pre>
+	 * Document "Annual Report 2026" was moved to state "Approved".
+	 * </pre>
+	 * 
+	 * @param oldState State before the transition
+	 */
+	public void logTransition() {
+		
+		final String str = 
+			format(
+				"Document \"%s\" was moved to state \"%s\".",
+				_title, _documentState.getStatusName() );
+		
+		System.out.println( str );
+	}
+	
+	
+	/**
+	 * Write message to STDOUT with the titel and
+	 * current state of the document.<br>
+	 * 
+	 * Example:
+	 * <pre>
+	 * Document "Annual report 2026" is now in state "Draft".
+	 * </pre>
+	 */
+	public void logCurrentState() {
+		
+		System.out.println( toString() );
+	}	
+	
+	
+	/**
 	 * Write message to STDOUT, that document is already
 	 * in a particular state.
 	 * <br>
@@ -159,44 +196,7 @@ public class Document {
 		System.out.println( str );
 	}
 	
-	
-	/**
-	 * Write message to STDOUT that describes a successful state transition.
-	 * <br>
-	 * 
-	 * Example:
-	 * <pre>
-	 * Document "Annual Report 2026" was moved to state "Approved".
-	 * </pre>
-	 * 
-	 * @param oldState State before the transition
-	 */
-	public void logTransition() {
-		
-		final String str = 
-			format(
-				"Document \"%s\" was moved to state \"%s\".",
-				_title, _documentState.getStatusName() );
-		
-		System.out.println( str );
-	}
-	
-	
-	/**
-	 * Write message to STDOUT with the titel and
-	 * current state of the document.<br>
-	 * 
-	 * Example:
-	 * <pre>
-	 * Document "Annual report 2026" is now in state "Draft".
-	 * </pre>
-	 */
-	public void logCurrentState() {
-		
-		System.out.println( toString() );
-	}
-	
-	
+			
 	/**
 	 * Method to return string representation of calling
 	 * document object. 
