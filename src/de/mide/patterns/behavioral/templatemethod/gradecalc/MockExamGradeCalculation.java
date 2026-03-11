@@ -13,9 +13,9 @@ import java.util.Optional;
  * a matter of passing (with at least 50% of points) or failing.   
  * <br><br>
  * 
- * Generous calculation: If individual values and average 
- * values are not whole points, they are rounded up to the
- * next full number.
+ * Generous calculation: If individual values and average values  
+ * are not whole points, then they are rounded up to the next full 
+ * number.
  */
 public class MockExamGradeCalculation extends AbstractGradeCalculation {
 
