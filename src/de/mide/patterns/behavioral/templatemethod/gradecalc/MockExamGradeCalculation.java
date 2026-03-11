@@ -41,7 +41,7 @@ public class MockExamGradeCalculation extends AbstractGradeCalculation {
 			        numberOfValues );
 		}
 		
-		for ( int i = 0; i < pointsArray.length; i++ ) {
+		for ( int i = 0; i < numberOfValues; i++ ) {
 						
 			double value = pointsArray[i];
 			
